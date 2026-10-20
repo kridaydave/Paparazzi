@@ -1,0 +1,17 @@
+Type: research
+Status: resolved
+
+## Question
+
+Which fingerprinting signals actually survive system prompts, sampling, and provider-side rewriting? Style features drift; tokenizer differential and infra probes presumably don't. Find primary evidence on robustness per signal family, with numbers where available.
+## Answer
+
+Short version: style/behavioral signals drift the most and break under hardening; single-token distributions and KBF survive benign deployment variation with measured numbers; tokenizer differential is input-side and survives system prompts/sampling but breaks if billing metadata is corrupted; infra/error probes are stack-level and presumably survive, but I found no published robustness numbers for them.
+
+- Style / behavioral (LLMmap-style embeddings + paparazzi features): drifts. Lasso's LLMmap agent test (13 models, 3 apps, 4 configs): exact recognition pure 61.54% -> default 51.28% -> german 38.46% -> restrictive 17.95%; combined exact+partial pure/default 87.18% -> german 58.97% -> restrictive 48.72%. Confidence signals (top-1 distance, rank-1/2 gap) stop separating correct from wrong under german/restrictive (Mann-Whitney p=0.17-0.65). Agentic reconnaissance is worse: default 7.69%, restrictive 2.56% exact. Source: Lasso blog "From Lab to Wild" (2026-05-20).
+- Single-token output distributions (Bruckner, arxiv 2607.10252): largely survive serving stacks. Median cross-provider JSD 0.227 vs split-half 0.140 vs impostor 0.489; 70.6% of 34 provider pairs below the 5th percentile of impostor distances; cross-provider verification AUC 0.880 vs 0.971 same-mix. Temperature 0: 90.4% cells deterministic within provider, 84.5% pooled. But 10/34 (29%) provider pairs diverge beyond the impostor range (extreme 0.716), so provider rewriting can move the fingerprint. System-prompt robustness is not directly tested; the battery uses a fixed one-word system prompt. Paraphrase robustness is argued (semantic task classes) but the invariance experiment is future work.
+- KBF (knowledge boundary, arxiv 2605.29524): robust to benign deployment variation. 0/30 false positives and 60/60 true positives across 6 wrappers (role prompts, temperatures 0-0.7, RAG) on 5 models, vs baselines 6-29/30 FPs; 0/16 same-reference FPs; all 4 probe-format variants detect every substitution with no FPs. Boundary probes retain 83.86-93.15% reference agreement; other models reproduce them at 43.91-79.48%. Cost ~$0.24-$0.67 per audit. Caveat: it tests endpoint consistency against a claimed reference, not open-set "which model".
+- Tokenizer differential (iSimplifyMe, "The Tokenizer Is a Fingerprint"): input-side, so system prompts and sampling do not touch it; differential counts cancel the chat-template overhead. Evidence: 95/95 exact match against released GLM-5 vocabulary at MAE 0.00; escaping behavior is itself a signal. Defeated only by corrupting usage.prompt_tokens, which costs billing transparency; template drift invalidates merged runs (harness refuses to combine across a baseline change).
+- Infra / error probes: stack-level envelopes (validation prose, error codes, accepted roles, headers) are independent of system prompts and sampling. No published quantitative robustness numbers found; gateway noise means headers can lie, so cross-check several. Modelprint runs 9 such probes.
+
+Context: LLM fingerprint signal robustness to system prompts, sampling, and provider-side rewriting — /home/kriday/Code/paparazzi/.scratch/model-fingerprint-grey-areas/issues/01-survive-system-prompts.md
