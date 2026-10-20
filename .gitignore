@@ -1,0 +1,10 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+data/*.db
+.env
+
+# Screenshot dumps from design reference lookups, 49MB of PNGs. They belong in
+# the website worktree, not in this repository's history.
+UI-images/

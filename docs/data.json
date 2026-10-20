@@ -1,0 +1,811 @@
+{
+  "counts": {
+    "failed_runs": 0,
+    "guesses": 1,
+    "hits": 0,
+    "mock_runs": 10,
+    "models": 2,
+    "published": 0,
+    "reveals": 0,
+    "runs": 10
+  },
+  "generated_at": "2026-10-20T08:25:02Z",
+  "guesses": [
+    {
+      "candidate": "fixture/known-model",
+      "created_at": "2026-10-20T08:25:02+00:00",
+      "met_bar": false,
+      "per_signal": {
+        "context": {
+          "agreement": 1.0,
+          "evidence": {
+            "candidate_signal": {
+              "estimated_tokens": {
+                "128000": 128000,
+                "32000": 32000,
+                "8000": 8000
+              },
+              "failed_at": {
+                "128000": null,
+                "32000": null,
+                "8000": null
+              },
+              "limit_observed": null,
+              "ok_at": {
+                "128000": false,
+                "32000": false,
+                "8000": false
+              },
+              "sizes": [
+                8000,
+                32000,
+                128000
+              ]
+            },
+            "slug_signal": {
+              "estimated_tokens": {
+                "128000": 128000,
+                "32000": 32000,
+                "8000": 8000
+              },
+              "failed_at": {
+                "128000": null,
+                "32000": null,
+                "8000": null
+              },
+              "limit_observed": null,
+              "ok_at": {
+                "128000": false,
+                "32000": false,
+                "8000": false
+              },
+              "sizes": [
+                8000,
+                32000,
+                128000
+              ]
+            }
+          },
+          "score": 100.0
+        },
+        "generation": {
+          "agreement": null,
+          "evidence": {
+            "candidate_signal": {
+              "available": false,
+              "fields": [],
+              "provider": null,
+              "region": null
+            },
+            "slug_signal": {
+              "available": false,
+              "fields": [],
+              "provider": null,
+              "region": null
+            }
+          },
+          "score": 0.0
+        },
+        "infra": {
+          "agreement": null,
+          "evidence": {
+            "candidate_signal": {
+              "absurd_max_tokens": {
+                "code": 400,
+                "envelope_keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "error_code": 400,
+                "error_message": "synthetic infra probe failure (mock)",
+                "error_type": "invalid_request_error",
+                "keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "message": "synthetic infra probe failure (mock)",
+                "paparazzi_mock": true,
+                "status": 400,
+                "type": "invalid_request_error"
+              },
+              "invalid_role": {
+                "code": 400,
+                "envelope_keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "error_code": 400,
+                "error_message": "synthetic infra probe failure (mock)",
+                "error_type": "invalid_request_error",
+                "keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "message": "synthetic infra probe failure (mock)",
+                "paparazzi_mock": true,
+                "status": 400,
+                "type": "invalid_request_error"
+              },
+              "malformed_json_body": {
+                "code": 400,
+                "envelope_keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "error_code": 400,
+                "error_message": "synthetic infra probe failure (mock)",
+                "error_type": "invalid_request_error",
+                "keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "message": "synthetic infra probe failure (mock)",
+                "paparazzi_mock": true,
+                "status": 400,
+                "type": "invalid_request_error"
+              },
+              "missing_required_field": {
+                "code": 400,
+                "envelope_keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "error_code": 400,
+                "error_message": "synthetic infra probe failure (mock)",
+                "error_type": "invalid_request_error",
+                "keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "message": "synthetic infra probe failure (mock)",
+                "paparazzi_mock": true,
+                "status": 400,
+                "type": "invalid_request_error"
+              },
+              "mock": true,
+              "model": "fixture/known-model",
+              "out_of_range_temperature": {
+                "code": 400,
+                "envelope_keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "error_code": 400,
+                "error_message": "synthetic infra probe failure (mock)",
+                "error_type": "invalid_request_error",
+                "keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "message": "synthetic infra probe failure (mock)",
+                "paparazzi_mock": true,
+                "status": 400,
+                "type": "invalid_request_error"
+              },
+              "paparazzi_mock": true,
+              "probes": [
+                {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "probe": "out_of_range_temperature",
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "probe": "absurd_max_tokens",
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "probe": "invalid_role",
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "probe": "malformed_json_body",
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "probe": "missing_required_field",
+                  "status": 400,
+                  "type": "invalid_request_error"
+                }
+              ],
+              "probes_dict": {
+                "absurd_max_tokens": {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                "invalid_role": {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                "malformed_json_body": {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                "missing_required_field": {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                "out_of_range_temperature": {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "status": 400,
+                  "type": "invalid_request_error"
+                }
+              },
+              "used_mock": true
+            },
+            "slug_signal": {
+              "absurd_max_tokens": {
+                "code": 400,
+                "envelope_keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "error_code": 400,
+                "error_message": "synthetic infra probe failure (mock)",
+                "error_type": "invalid_request_error",
+                "keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "message": "synthetic infra probe failure (mock)",
+                "paparazzi_mock": true,
+                "status": 400,
+                "type": "invalid_request_error"
+              },
+              "invalid_role": {
+                "code": 400,
+                "envelope_keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "error_code": 400,
+                "error_message": "synthetic infra probe failure (mock)",
+                "error_type": "invalid_request_error",
+                "keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "message": "synthetic infra probe failure (mock)",
+                "paparazzi_mock": true,
+                "status": 400,
+                "type": "invalid_request_error"
+              },
+              "malformed_json_body": {
+                "code": 400,
+                "envelope_keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "error_code": 400,
+                "error_message": "synthetic infra probe failure (mock)",
+                "error_type": "invalid_request_error",
+                "keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "message": "synthetic infra probe failure (mock)",
+                "paparazzi_mock": true,
+                "status": 400,
+                "type": "invalid_request_error"
+              },
+              "missing_required_field": {
+                "code": 400,
+                "envelope_keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "error_code": 400,
+                "error_message": "synthetic infra probe failure (mock)",
+                "error_type": "invalid_request_error",
+                "keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "message": "synthetic infra probe failure (mock)",
+                "paparazzi_mock": true,
+                "status": 400,
+                "type": "invalid_request_error"
+              },
+              "mock": true,
+              "model": "stealth/unknown-thing",
+              "out_of_range_temperature": {
+                "code": 400,
+                "envelope_keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "error_code": 400,
+                "error_message": "synthetic infra probe failure (mock)",
+                "error_type": "invalid_request_error",
+                "keys": [
+                  "error",
+                  "paparazzi_mock"
+                ],
+                "message": "synthetic infra probe failure (mock)",
+                "paparazzi_mock": true,
+                "status": 400,
+                "type": "invalid_request_error"
+              },
+              "paparazzi_mock": true,
+              "probes": [
+                {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "probe": "out_of_range_temperature",
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "probe": "absurd_max_tokens",
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "probe": "invalid_role",
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "probe": "malformed_json_body",
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "probe": "missing_required_field",
+                  "status": 400,
+                  "type": "invalid_request_error"
+                }
+              ],
+              "probes_dict": {
+                "absurd_max_tokens": {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                "invalid_role": {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                "malformed_json_body": {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                "missing_required_field": {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "status": 400,
+                  "type": "invalid_request_error"
+                },
+                "out_of_range_temperature": {
+                  "code": 400,
+                  "envelope_keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "error_code": 400,
+                  "error_message": "synthetic infra probe failure (mock)",
+                  "error_type": "invalid_request_error",
+                  "keys": [
+                    "error",
+                    "paparazzi_mock"
+                  ],
+                  "message": "synthetic infra probe failure (mock)",
+                  "paparazzi_mock": true,
+                  "status": 400,
+                  "type": "invalid_request_error"
+                }
+              },
+              "used_mock": true
+            }
+          },
+          "score": 0.0
+        },
+        "style": {
+          "agreement": 0.9999999999999999,
+          "evidence": {
+            "candidate_signal": {
+              "avg_word_count": 11.0,
+              "bold_rate": 0.0,
+              "counting_quirk_miss": true,
+              "emoji_rate": 0.0,
+              "heading_rate": 0.0,
+              "hedge_rate": 0.0,
+              "list_rate": 0.0,
+              "maker_claims": [],
+              "markdown_rate": 0.0,
+              "refusal_rate": 0.0
+            },
+            "slug_signal": {
+              "avg_word_count": 11.0,
+              "bold_rate": 0.0,
+              "counting_quirk_miss": true,
+              "emoji_rate": 0.0,
+              "heading_rate": 0.0,
+              "hedge_rate": 0.0,
+              "list_rate": 0.0,
+              "maker_claims": [],
+              "markdown_rate": 0.0,
+              "refusal_rate": 0.0
+            }
+          },
+          "score": 100.0
+        }
+      },
+      "published": false,
+      "score": 100.0,
+      "slug": "stealth/unknown-thing",
+      "used_mock": true
+    }
+  ],
+  "models": [
+    {
+      "anonymous": false,
+      "first_seen": "2026-10-20T08:25:01+00:00",
+      "last_seen": "2026-10-20T08:25:01+00:00",
+      "slug": "fixture/known-model",
+      "status": "active"
+    },
+    {
+      "anonymous": true,
+      "first_seen": "2026-10-20T08:25:01+00:00",
+      "last_seen": "2026-10-20T08:25:01+00:00",
+      "slug": "stealth/unknown-thing",
+      "status": "active"
+    }
+  ],
+  "reveals": [],
+  "runs": [
+    {
+      "error": null,
+      "id": 1,
+      "kind": "battery",
+      "ok": true,
+      "slug": "fixture/known-model",
+      "started_at": "2026-10-20T08:25:01+00:00",
+      "used_mock": true
+    },
+    {
+      "error": null,
+      "id": 2,
+      "kind": "tokenizer",
+      "ok": true,
+      "slug": "fixture/known-model",
+      "started_at": "2026-10-20T08:25:01+00:00",
+      "used_mock": true
+    },
+    {
+      "error": null,
+      "id": 3,
+      "kind": "infra",
+      "ok": true,
+      "slug": "fixture/known-model",
+      "started_at": "2026-10-20T08:25:01+00:00",
+      "used_mock": true
+    },
+    {
+      "error": null,
+      "id": 4,
+      "kind": "generation",
+      "ok": true,
+      "slug": "fixture/known-model",
+      "started_at": "2026-10-20T08:25:01+00:00",
+      "used_mock": true
+    },
+    {
+      "error": null,
+      "id": 5,
+      "kind": "context",
+      "ok": true,
+      "slug": "fixture/known-model",
+      "started_at": "2026-10-20T08:25:01+00:00",
+      "used_mock": true
+    },
+    {
+      "error": null,
+      "id": 6,
+      "kind": "battery",
+      "ok": true,
+      "slug": "stealth/unknown-thing",
+      "started_at": "2026-10-20T08:25:01+00:00",
+      "used_mock": true
+    },
+    {
+      "error": null,
+      "id": 7,
+      "kind": "tokenizer",
+      "ok": true,
+      "slug": "stealth/unknown-thing",
+      "started_at": "2026-10-20T08:25:01+00:00",
+      "used_mock": true
+    },
+    {
+      "error": null,
+      "id": 8,
+      "kind": "infra",
+      "ok": true,
+      "slug": "stealth/unknown-thing",
+      "started_at": "2026-10-20T08:25:01+00:00",
+      "used_mock": true
+    },
+    {
+      "error": null,
+      "id": 9,
+      "kind": "generation",
+      "ok": true,
+      "slug": "stealth/unknown-thing",
+      "started_at": "2026-10-20T08:25:01+00:00",
+      "used_mock": true
+    },
+    {
+      "error": null,
+      "id": 10,
+      "kind": "context",
+      "ok": true,
+      "slug": "stealth/unknown-thing",
+      "started_at": "2026-10-20T08:25:01+00:00",
+      "used_mock": true
+    }
+  ]
+}

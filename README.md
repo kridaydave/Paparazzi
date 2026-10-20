@@ -7,10 +7,17 @@ fixture replay; failures are recorded as failures.
 
 ## Status
 
-**Weekend-lab v0.1.** The matcher is deliberately dumb and honest: stylistic
-feature rates z-scaled cosine similarity over a fixed probe battery. It has
-never run against a live stealth model yet. Expect it to be wrong until proven
-otherwise in public.
+**v0.1.1, wired up and offline-tested, never run against a live model yet.**
+The command surface works end to end in fixture replay mode (`--mock`), with
+every run marked `used_mock=1` and no guess meeting the publish bar. What has
+never happened is a real key pointed at a real stealth slug, so the matcher is
+still wrong until proven otherwise in public.
+
+Signals in this version: tokenizer differential as the primary identity
+signal, infra/error envelopes, generation metadata, a context ladder, style
+cosine as support only. Decisions and the publish bar are written up in
+`docs/research-model-identification.md` and `.scratch/model-fingerprint-grey-areas/`.
+Module contracts and how the pieces fit are in `docs/dev-contract.md`.
 
 ## Use
 
@@ -28,8 +35,9 @@ python3 -m paparazzi probe stealth/whatever-alpha
 python3 -m paparazzi match stealth/whatever-alpha   # ranked guesses -> db -> page
 python3 -m paparazzi reveal stealth/whatever-alpha <true-name> <source-url>   # after the lab confirms
 
-# offline dev / self-test
+# offline dev / self-test (no key, no network)
 python3 -m paparazzi know fixture/timidy --mock
+python3 -m pytest tests/ -q
 
 # the page
 python3 -m paparazzi report && open docs/index.html   # or any static server
@@ -44,10 +52,17 @@ table is the only thing that matters. Everything else is scaffolding for it.
    refusals). One cheap completion per prompt, temperature 0.
 2. Responses become a small feature vector: emoji/markdown/list/refusal/hedge
    rates, word counts, a counting-quirk miss check, explicit maker claims.
-3. The stealth vector is compared (cosine, z-scaled) to signatures of known
-   models. Best match + confidence gap = the guess, logged to sqlite.
-4. `watch` diffs OpenRouter's public model list against the db: new stealth
-   slugs in, rotated-off slugs marked gone.
+   Style is support only, never enough to publish.
+3. `know` also measures how the model tokenizes ~95 probe strings (this is the
+   load-bearing signal), captures error envelopes, generation metadata and a
+   context ladder. `match` compares a stealth slug against every stored
+   signature using fixed weights: tokenizer 0.5, infra 0.15, generation 0.15,
+   context 0.1, style 0.1, renormalized over families that produced a signal.
+4. A public guess needs a full tokenizer match plus one corroborator, and a
+   human approves it. Fixture replays can never meet that bar.
+5. `watch` diffs OpenRouter's public model list against the db: new stealth
+   slugs in, rotated-off slugs marked gone. An empty roster marks nothing, so
+   a failed fetch cannot write a lie.
 
 ## Honesty rules
 
@@ -61,6 +76,11 @@ table is the only thing that matters. Everything else is scaffolding for it.
 
 ## Open items
 
-- live key wiring + first real probe run
-- a cron/systemd timer for `watch`
--.gitignore + CI later
+- live key wiring + first real probe run: put `PAPARAZZI_OPENROUTER_KEY` in
+  `.env`, then `python3 -m paparazzi know <slug>` for real
+- `bash ops/install-timer.sh` to turn on the daily watch (it refuses to
+  install without a key, so it cannot fire failures at you beforehand)
+- CI file is in `.github/workflows/ci.yml`; it starts running once this repo
+  has a remote to push to
+- candidate vocabularies: some Hugging Face repos are gated and want `HF_TOKEN`,
+  so a real tokenizer run needs one or needs those candidates dropped
