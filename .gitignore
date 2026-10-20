@@ -8,3 +8,6 @@ data/*.db
 # Screenshot dumps from design reference lookups, 49MB of PNGs. They belong in
 # the website worktree, not in this repository's history.
 UI-images/
+# Stray output from the website session's image conversion. The page work lives
+# in the paparazzi-website-ui worktree, so this copy is not ours to track.
+design-demos/

@@ -1,0 +1,9 @@
+[Unit]
+Description=paparazzi daily roster watch
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/kriday/Code/paparazzi
+ExecStart=/home/kriday/Code/paparazzi/scripts/watch-daily.sh
